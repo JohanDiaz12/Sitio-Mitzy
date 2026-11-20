@@ -1,12 +1,13 @@
-# Mitzy's Portal
+# Sitio-Mitzy
 
-Static website for **Mitzy Fernanda Lafragua Vargas**: home page with a secure portal (Supabase Auth), catalog and about pages.
+Simple static website for **Mitzy Fernanda Lafragua Vargas**: home page with a login portal (Supabase Auth), catalog and about pages.
+
+Live site: https://johandiaz12.github.io/Sitio-Mitzy/
 
 ## Features
 - Sign up / sign in with email and password (Supabase Auth: hashed passwords, managed session)
 - Passwordless sign-in via email magic link
 - Requests panel visible only with an active session; each request stores the creator's email
-- Requests rendered with `textContent` to prevent HTML injection
 
 ## Files
 | File | Purpose |
@@ -14,7 +15,7 @@ Static website for **Mitzy Fernanda Lafragua Vargas**: home page with a secure p
 | `index.html` | Home + login + requests panel |
 | `catalogo.html` | Catalog (coming soon) |
 | `acerca.html` | About |
-| `styles.css` | Dark "aurora" theme |
+| `css.css` | Styles |
 | `supabase-config.js` | Supabase URL + public (publishable) key only |
 
 ## Security notes
