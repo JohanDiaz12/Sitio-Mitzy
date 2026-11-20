@@ -1,107 +1,175 @@
-/* ---------- Base del sitio (versión Mitzy: morado + fondo lila) ---------- */
-body {
-    font-family: Verdana, Geneva, sans-serif;
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 16px;
-    background: #faf6fc;
-    color: #2e2433;
+/* =====================================================================
+   Sitio de Mitzy — estilo neo-brutalista sencillo
+   Crema + coral + negro · letra serif · bordes gruesos con sombra sólida
+   ===================================================================== */
+*{ box-sizing: border-box; }
+[hidden]{ display: none !important; }
+
+body{
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fff8ef;
+    color: #111;
 }
+
+/* ---------- Barra de menú negra ---------- */
 nav{
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #7A2E8E;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    background: #111;
+    padding: 10px 16px;
+}
+nav .marca{
+    color: #ff6b4a;
+    font-weight: bold;
+    letter-spacing: .1em;
+    margin-right: auto;
 }
 nav a{
-    color: #7A2E8E;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    margin: 0 10px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    letter-spacing: .08em;
+    padding: 6px 10px;
 }
-nav a:hover{
-    text-decoration: underline;
+nav a:hover, nav a.activo{
+    background: #ff6b4a;
+    color: #111;
 }
 
-h1{
-    color: #7A2E8E;
-    text-align: center;
+/* ---------- Encabezado en bloque de color ---------- */
+.banner{
+    background: #ff6b4a;
+    border-bottom: 3px solid #111;
+    padding: 40px 16px;
 }
-h2{
-    text-align: center;
+.banner h1, .banner h2{
+    max-width: 640px;
+    margin: 0 auto;
+}
+.banner h1{
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    line-height: 1.1;
+}
+.banner h2{
+    margin-top: 12px;
     font-weight: normal;
+    font-style: italic;
+    font-size: 1.1rem;
 }
 
-/* ---------- Portal ---------- */
+/* ---------- Contenido ---------- */
+.contenido{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+}
 .card{
     background: #fff;
-    border: 1px solid #e4d3ea;
-    border-left: 5px solid #7A2E8E;
-    border-radius: 4px;
-    padding: 16px;
-    margin-top: 24px;
+    border: 3px solid #111;
+    box-shadow: 6px 6px 0 #111;
+    padding: 20px;
+    margin-top: 32px;
 }
 .card h3{
-    color: #7A2E8E;
-    margin-top: 8px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: .06em;
+    font-size: 1rem;
 }
 label{
     display: block;
-    margin-top: 10px;
+    margin-top: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8rem;
     font-weight: bold;
+    text-transform: uppercase;
 }
 input{
     width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
     margin-top: 4px;
-    border: 1px solid #cdb6d6;
-    border-radius: 4px;
+    padding: 10px;
+    font: inherit;
+    background: #fff8ef;
+    border: 2px solid #111;
+    border-radius: 0;
 }
+input:focus{
+    outline: none;
+    background: #fff;
+    box-shadow: 3px 3px 0 #ff6b4a;
+}
+
+/* ---------- Botones cuadrados con sombra ---------- */
 .acciones{
-    margin-top: 12px;
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
+    margin-top: 16px;
 }
 button{
-    background: #7A2E8E;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 16px;
-    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: .8rem;
+    letter-spacing: .05em;
+    padding: 10px 14px;
+    background: #ff6b4a;
+    color: #111;
+    border: 2px solid #111;
+    border-radius: 0;
+    box-shadow: 3px 3px 0 #111;
+    cursor: pointer;
+}
+button:active{
+    transform: translate(3px, 3px);
+    box-shadow: none;
 }
 button.secundario{
     background: #fff;
-    color: #7A2E8E;
-    border: 1px solid #7A2E8E;
 }
 .barra{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed #111;
 }
+/* Separación entre la barra de sesión y el primer título del panel */
+.barra + h3{ margin-top: 18px; }
 
-/* Mensajes de estado */
-.msg{ min-height: 1.2em; }
-.msg.ok{ color: #2e7d32; }
-.msg.error{ color: #c0392b; }
+/* ---------- Mensajes ---------- */
+.msg{ min-height: 1.2em; font-family: Arial, Helvetica, sans-serif; font-size: .9rem; }
+.msg.ok{ color: #1b7f3b; }
+.msg.error{ color: #c62828; }
 
-/* Tabla de solicitudes */
+/* ---------- Tabla ---------- */
 table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 8px;
+    border: 2px solid #111;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9rem;
 }
 th, td{
     text-align: left;
-    padding: 6px;
-    border-bottom: 1px solid #eee2f2;
+    padding: 8px;
+    border-bottom: 1px solid #111;
+    overflow-wrap: anywhere;
 }
 th{
+    background: #111;
     color: #fff;
-    background: #7A2E8E;
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .06em;
 }
+tbody tr:nth-child(even){ background: #fff8ef; }
