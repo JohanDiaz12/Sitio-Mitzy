@@ -6,8 +6,8 @@
 // Valores en: Supabase → Project Settings → Data API / API Keys
 // =====================================================================
 
-const SUPABASE_URL = 'PEGA_AQUI_TU_PROJECT_URL';           // ej: https://abcd1234.supabase.co
-const SUPABASE_ANON_KEY = 'PEGA_AQUI_TU_PUBLISHABLE_KEY';  // ej: sb_publishable_...
+const SUPABASE_URL = 'https://deekhdvvmbivnethldss.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_aIGr1dWe7paFn-79skNNag_qWfJ-6-p'; // clave publishable (pública)
 
 // La librería (CDN) expone window.supabase con createClient.
 // Lo reemplazamos por el cliente ya conectado, para usar `supabase.auth...` en index.html.
